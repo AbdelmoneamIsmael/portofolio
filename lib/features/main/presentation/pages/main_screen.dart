@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portofolio/features/main/presentation/cubit/main_cubit.dart';
+import 'package:portofolio/features/main/presentation/cubit/main_state.dart';
 import 'package:portofolio/features/main/presentation/pages/body_view.dart';
 import 'package:portofolio/features/main/presentation/pages/portofolio_app_bar.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  final ScrollController _scrollController = ScrollController();
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +14,21 @@ class _MainScreenState extends State<MainScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          SingleChildScrollView(
-            controller: _scrollController,
-            child: BodyView(scrollController: _scrollController),
+          BlocBuilder<MainCubit, MainState>(
+            builder: (context, state) {
+              return SingleChildScrollView(
+                controller: context.read<MainCubit>().scrollController,
+                child: BodyView(
+                  scrollController: context.read<MainCubit>().scrollController,
+                ),
+              );
+            },
           ),
-          Positioned(
+          const Positioned(
             top: 0,
             left: 0,
             right: 0,
-            child: PortofolioAppBar(scrollController: _scrollController),
+            child: PortofolioAppBar(),
           ),
         ],
       ),

@@ -20,9 +20,12 @@ class ProjectsView extends StatelessWidget {
           AnimatedOnScroll(
             delay: const Duration(milliseconds: 200),
             offset: const Offset(0, 30),
-            child: SectionTitle(title: 'projects_title', icon: Assets.icons.projects),
+            child: SectionTitle(
+              title: 'projects_title',
+              icon: Assets.icons.projects,
+            ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 60.h),
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -37,7 +40,7 @@ class ProjectsView extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) {
-              return SizedBox(height: 20.h);
+              return SizedBox(height: 40.h);
             },
           ),
         ],

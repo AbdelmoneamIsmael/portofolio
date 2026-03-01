@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portofolio/features/main/presentation/cubit/main_cubit.dart';
+import 'package:portofolio/features/main/presentation/cubit/main_state.dart';
 import 'package:portofolio/features/main/presentation/view/about_section.dart';
 import 'package:portofolio/features/main/presentation/view/contact_me_section.dart';
 import 'package:portofolio/features/main/presentation/view/header_view.dart';
@@ -12,16 +15,22 @@ class BodyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 120.h),
-        HeaderSection(scrollController: scrollController),
-        const AboutSection(),
-        const ProjectsView(),
-        const ContactMeSection(),
-      ],
+    return BlocBuilder<MainCubit, MainState>(
+      builder: (context, state) {
+        final cubit = context.read<MainCubit>();
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 120.h),
+            HeaderSection(key: cubit.homeKey),
+            AboutSection(key: cubit.aboutKey),
+            ProjectsView(key: cubit.projectsKey),
+            ContactMeSection(key: cubit.contactKey),
+            SizedBox(height: 20.h),
+          ],
+        );
+      },
     );
   }
 }

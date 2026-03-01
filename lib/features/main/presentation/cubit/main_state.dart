@@ -5,6 +5,8 @@ part 'main_state.freezed.dart';
 @freezed
 class MainState with _$MainState {
   const factory MainState.initial() = Initial;
+  const factory MainState.scrolled(bool isScrolled) = Scrolled;
+  const factory MainState.activeSectionChanged(String section) = ActiveSectionChanged;
 }
 
 
