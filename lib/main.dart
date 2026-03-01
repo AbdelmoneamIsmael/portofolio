@@ -10,7 +10,7 @@ import 'portofolio.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  await initLocalization();
+  await initLocalization(); 
   initDebugMode();
   await initLocalization();
   await CacheHelper.init();
