@@ -86,6 +86,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/play store.svg
   String get playStore => 'assets/icons/play store.svg';
 
+  /// File path: assets/icons/projects.svg
+  String get projects => 'assets/icons/projects.svg';
+
   /// File path: assets/icons/skills.svg
   String get skills => 'assets/icons/skills.svg';
 
@@ -109,6 +112,7 @@ class $AssetsIconsGen {
     github,
     linkedin,
     playStore,
+    projects,
     skills,
     swift,
     whatsapp,
@@ -130,6 +134,19 @@ class $AssetsImagesGen {
   AssetGenImage get developerBkImageLight =>
       const AssetGenImage('assets/images/developer_bk_image_light.png');
 
+  /// Directory path: assets/images/fittest
+  $AssetsImagesFittestGen get fittest => const $AssetsImagesFittestGen();
+
+  /// Directory path: assets/images/rafeel
+  $AssetsImagesRafeelGen get rafeel => const $AssetsImagesRafeelGen();
+
+  /// Directory path: assets/images/sakani
+  $AssetsImagesSakaniGen get sakani => const $AssetsImagesSakaniGen();
+
+  /// Directory path: assets/images/shubic lubic
+  $AssetsImagesShubicLubicGen get shubicLubic =>
+      const $AssetsImagesShubicLubicGen();
+
   /// List of all assets
   List<AssetGenImage> get values => [
     developer,
@@ -149,6 +166,113 @@ class $AssetsTranslationsGen {
 
   /// List of all assets
   List<String> get values => [arSA, enUS];
+}
+
+class $AssetsImagesFittestGen {
+  const $AssetsImagesFittestGen();
+
+  /// File path: assets/images/fittest/1.webp
+  AssetGenImage get a1 => const AssetGenImage('assets/images/fittest/1.webp');
+
+  /// File path: assets/images/fittest/2.webp
+  AssetGenImage get a2 => const AssetGenImage('assets/images/fittest/2.webp');
+
+  /// File path: assets/images/fittest/3.webp
+  AssetGenImage get a3 => const AssetGenImage('assets/images/fittest/3.webp');
+
+  /// File path: assets/images/fittest/4.webp
+  AssetGenImage get a4 => const AssetGenImage('assets/images/fittest/4.webp');
+
+  /// File path: assets/images/fittest/fittest.png
+  AssetGenImage get fittest =>
+      const AssetGenImage('assets/images/fittest/fittest.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [a1, a2, a3, a4, fittest];
+}
+
+class $AssetsImagesRafeelGen {
+  const $AssetsImagesRafeelGen();
+
+  /// File path: assets/images/rafeel/1.png
+  AssetGenImage get a1 => const AssetGenImage('assets/images/rafeel/1.png');
+
+  /// File path: assets/images/rafeel/2.png
+  AssetGenImage get a2 => const AssetGenImage('assets/images/rafeel/2.png');
+
+  /// File path: assets/images/rafeel/3.png
+  AssetGenImage get a3 => const AssetGenImage('assets/images/rafeel/3.png');
+
+  /// File path: assets/images/rafeel/4.png
+  AssetGenImage get a4 => const AssetGenImage('assets/images/rafeel/4.png');
+
+  /// File path: assets/images/rafeel/5.png
+  AssetGenImage get a5 => const AssetGenImage('assets/images/rafeel/5.png');
+
+  /// File path: assets/images/rafeel/appLogo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/rafeel/appLogo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [a1, a2, a3, a4, a5, appLogo];
+}
+
+class $AssetsImagesSakaniGen {
+  const $AssetsImagesSakaniGen();
+
+  /// File path: assets/images/sakani/1.png
+  AssetGenImage get a1 => const AssetGenImage('assets/images/sakani/1.png');
+
+  /// File path: assets/images/sakani/2.png
+  AssetGenImage get a2 => const AssetGenImage('assets/images/sakani/2.png');
+
+  /// File path: assets/images/sakani/4.png
+  AssetGenImage get a4 => const AssetGenImage('assets/images/sakani/4.png');
+
+  /// File path: assets/images/sakani/5.png
+  AssetGenImage get a5 => const AssetGenImage('assets/images/sakani/5.png');
+
+  /// File path: assets/images/sakani/Group 16.png
+  AssetGenImage get group16 =>
+      const AssetGenImage('assets/images/sakani/Group 16.png');
+
+  /// File path: assets/images/sakani/app_logo_image.png
+  AssetGenImage get appLogoImage =>
+      const AssetGenImage('assets/images/sakani/app_logo_image.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [a1, a2, a4, a5, group16, appLogoImage];
+}
+
+class $AssetsImagesShubicLubicGen {
+  const $AssetsImagesShubicLubicGen();
+
+  /// File path: assets/images/shubic lubic/1.png
+  AssetGenImage get a1 =>
+      const AssetGenImage('assets/images/shubic lubic/1.png');
+
+  /// File path: assets/images/shubic lubic/2.png
+  AssetGenImage get a2 =>
+      const AssetGenImage('assets/images/shubic lubic/2.png');
+
+  /// File path: assets/images/shubic lubic/3.png
+  AssetGenImage get a3 =>
+      const AssetGenImage('assets/images/shubic lubic/3.png');
+
+  /// File path: assets/images/shubic lubic/4.png
+  AssetGenImage get a4 =>
+      const AssetGenImage('assets/images/shubic lubic/4.png');
+
+  /// File path: assets/images/shubic lubic/5.png
+  AssetGenImage get a5 =>
+      const AssetGenImage('assets/images/shubic lubic/5.png');
+
+  /// File path: assets/images/shubic lubic/app_logo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/shubic lubic/app_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [a1, a2, a3, a4, a5, appLogo];
 }
 
 class Assets {

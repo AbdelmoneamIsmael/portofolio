@@ -1,8 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:portofolio/core/themes/styles/app_text_style.dart';
+import 'package:portofolio/features/main/presentation/widgets/section_title.dart';
 import 'package:portofolio/features/main/presentation/widgets/skilled_widget.dart';
 import 'package:portofolio/gen/assets.gen.dart';
 
@@ -15,18 +14,7 @@ class SkilledSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SvgPicture.asset(Assets.icons.skills, width: 48.w, height: 48.h),
-            SizedBox(width: 20.w),
-            Text(
-              'skill_title'.tr(),
-              style: AppTextStyles.bold(context).copyWith(fontSize: 30.sp),
-            ),
-          ],
-        ),
+        SectionTitle(title: 'skill_title', icon: Assets.icons.skills),
         SizedBox(height: 20.h),
         SkilWidget(
           desc:

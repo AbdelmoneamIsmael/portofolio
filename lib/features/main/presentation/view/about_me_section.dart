@@ -1,10 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portofolio/core/extentions/padding_extention.dart';
-import 'package:portofolio/core/themes/styles/app_text_style.dart';
 import 'package:portofolio/features/main/presentation/widgets/my_icons.dart';
+import 'package:portofolio/features/main/presentation/widgets/section_title.dart';
 import 'package:portofolio/gen/assets.gen.dart';
 
 class AboutMeSection extends StatelessWidget {
@@ -14,15 +13,9 @@ class AboutMeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            SvgPicture.asset(Assets.icons.about, width: 48.w, height: 48.h),
-            SizedBox(width: 20.w),
-            Text(
-              'about_me_title'.tr(),
-              style: AppTextStyles.bold(context).copyWith(fontSize: 30.sp),
-            ),
-          ],
+        SectionTitle(
+          title: 'about_me_title',
+          icon: Assets.icons.about,
         ),
         SizedBox(height: 20.h),
         Text(
@@ -34,3 +27,4 @@ class AboutMeSection extends StatelessWidget {
     );
   }
 }
+

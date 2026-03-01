@@ -19,5 +19,10 @@
     "skill_four": "Development Tools and Optimization",
     "skill_five": "State Management",
     "skill_six": "Tools & Deployment:",
-    "skill_seven": "Additional Skills:"
+    "skill_seven": "Additional Skills:",
+    "projects_title": "Projects",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Send Message"
 }

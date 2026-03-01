@@ -55,6 +55,11 @@ flutter:
     - assets/icons/
     - assets/lottie/
     - assets/translations/
+    - assets/images/fittest/
+    - assets/images/rafeel/
+    - assets/images/sakani/
+    - assets/images/shubic lubic/
+    
 
   fonts:
     - family: Inter
