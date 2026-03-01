@@ -25,50 +25,64 @@ class _ProjectWidgetViewState extends State<ProjectWidgetView> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        transform: Matrix4.identity()
-          ..translate(0.0, _isHovered ? -10.0 : 0.0)
-          ..scale(_isHovered ? 1.02 : 1.0),
-        child:
-            GlassContainer(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 40.w,
-                    vertical: 20.h,
+    return AspectRatio(
+      aspectRatio: 16 / 9,
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          transform: Matrix4.identity()
+            ..translate(0.0, _isHovered ? -10.0 : 0.0)
+            ..scale(_isHovered ? 1.02 : 1.0),
+          child:
+              GlassContainer(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 40.w,
+                      vertical: 20.h,
+                    ),
+                    borderRadius: BorderRadius.circular(20.r),
+                    blur: 10.0,
+                    opacity: 0.15,
+                    borderWidth: 1.5,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        ProjectWidgetTitle(project: widget.project),
+                        SizedBox(height: 40.h),
+                        SizedBox(height: 30.h),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 4,
+                                child: SelectedIMageView(
+                                  project: widget.project,
+                                  selectedIndex: _selectedImageIndex,
+                                ),
+                              ),
+                              SizedBox(width: 40.w),
+                              Expanded(
+                                child: ListOfSCreenShots(
+                                  project: widget.project,
+                                  selectedIndex: _selectedImageIndex,
+                                  onImageSelected: _onImageSelected,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate(target: _isHovered ? 1 : 0)
+                  .shimmer(
+                    delay: const Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 1000),
+                    color: Theme.of(context).primaryColor.withOpacity(0.1),
                   ),
-                  borderRadius: BorderRadius.circular(20.r),
-                  blur: 10.0,
-                  opacity: 0.15,
-                  borderWidth: 1.5,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ProjectWidgetTitle(project: widget.project),
-                      SizedBox(height: 40.h),
-                      SizedBox(height: 30.h),
-                      SelectedIMageView(
-                        project: widget.project,
-                        selectedIndex: _selectedImageIndex,
-                      ),
-                      SizedBox(height: 40.h),
-                      ListOfSCreenShots(
-                        project: widget.project,
-                        selectedIndex: _selectedImageIndex,
-                        onImageSelected: _onImageSelected,
-                      ),
-                    ],
-                  ),
-                )
-                .animate(target: _isHovered ? 1 : 0)
-                .shimmer(
-                  delay: const Duration(milliseconds: 200),
-                  duration: const Duration(milliseconds: 1000),
-                  color: Theme.of(context).primaryColor.withOpacity(0.1),
-                ),
+        ),
       ),
     );
   }
@@ -88,17 +102,16 @@ class ListOfSCreenShots extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 2,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: project.screenShots!.asMap().entries.map((entry) {
-            final index = entry.key;
-            final image = entry.value;
-            final isSelected = selectedIndex == index;
+    return SingleChildScrollView(
+      child: Column(
+        children: project.screenShots!.asMap().entries.map((entry) {
+          final index = entry.key;
+          final image = entry.value;
+          final isSelected = selectedIndex == index;
 
-            return GestureDetector(
+          return AspectRatio(
+            aspectRatio: 1,
+            child: GestureDetector(
               onTap: () => onImageSelected(index),
               child: MouseRegion(
                 cursor: SystemMouseCursors.click,
@@ -137,9 +150,9 @@ class ListOfSCreenShots extends StatelessWidget {
                   ),
                 ),
               ),
-            );
-          }).toList(),
-        ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
@@ -157,33 +170,27 @@ class SelectedIMageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 6,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Theme.of(context).primaryColor.withOpacity(0.2),
-          //     blurRadius: 20,
-          //     spreadRadius: 5,
-          //   ),
-          // ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20.r),
-          child:
-              Image.asset(
-                    project.screenShots![selectedIndex],
-                    fit: BoxFit.scaleDown,
-                  )
-                  .animate(key: ValueKey(selectedIndex))
-                  .fadeIn(duration: const Duration(milliseconds: 500))
-                  .scale(
-                    begin: const Offset(1.1, 1.1),
-                    end: const Offset(1, 1),
-                  ),
-        ),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.r),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Theme.of(context).primaryColor.withOpacity(0.2),
+        //     blurRadius: 20,
+        //     spreadRadius: 5,
+        //   ),
+        // ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.r),
+        child:
+            Image.asset(
+                  project.screenShots![selectedIndex],
+                  fit: BoxFit.scaleDown,
+                )
+                .animate(key: ValueKey(selectedIndex))
+                .fadeIn(duration: const Duration(milliseconds: 500))
+                .scale(begin: const Offset(1.1, 1.1), end: const Offset(1, 1)),
       ),
     );
   }
