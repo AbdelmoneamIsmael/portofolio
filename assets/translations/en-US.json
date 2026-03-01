@@ -1,5 +1,23 @@
 {
     "cancel": "Cancel",
     "i_am_sure": "I am sure",
-    "home": "Home"
+    "home": "Home",
+    "hello": "Hello",
+    "full_name": "Eng. Abdelmoneam Ismael",
+    "jop_title": "Mobile Application Developer using (Flutter)",
+    "get_project": "Get Project",
+    "my_cv": "My CV",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about_me_title": "About Me",
+    "about_me_desc": "I'm results-driven Flutter Developer with 3+ years of expertise crafting high-performance mobile applications forAndroid and iOS. Proven track record in optimizing app performance by 40%, reducing load times by 35%, and producing production-ready solutions using Flutter, Dart, Firebase, REST APIs, and state managementarchitectures (Bloc, GETX). Adept at executing clean architecture principles and collaborating with cross-functional teams to exceed project objectives",
+    "skill_title": "Skills",
+    "skill_one": "Programming & Mobile Development:",
+    "skill_two": "Architecture & Design:",
+    "skill_three": "Backend & Integrations:",
+    "skill_four": "Development Tools and Optimization",
+    "skill_five": "State Management",
+    "skill_six": "Tools & Deployment:",
+    "skill_seven": "Additional Skills:"
 }

@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 abstract class LightColors {
   static const Color themeColor = Color(0xffffffff);
   static const Color backgroundColor = Color(0xffF2F5FA);
+  static const Color backgroundColor2 = Color(0xff1b1923);
   static const Color forGroundColor = Color(0xFF222c3c);
   static const Color textColor = Color(0xFF292b46);
   static const Color text2Color = Color(0xFF4b4b69);
-  static const Color primaryColor = Color(0xFF0C8178);
-  static const Color buttonColor = Color(0xFF0C8178);
+  static const Color primaryColor = Color(0xFFe62623);
+  static const Color buttonColor = Color(0xFFe62623);
   static const Color secondButtonColor = Color(0xFF11047A);
   static const Color secondContainerColor = Color(0xFFEAEDFA);
   static const Color containerColor = Color(0xFFD9D9D9);
@@ -20,12 +21,12 @@ abstract class LightColors {
 
 abstract class DarkColors {
   static const Color themeColor = Color(0xff000000);
-  static const Color backgroundColor = Color(0xFF0C0E1B);
+  static const Color backgroundColor = Color(0xFF080815);
   static const Color forGroundColor = Color(0xFFF1F1F1);
   static const Color textColor = Color(0xFFF1F1F1);
   static const Color text2Color = Color(0xFFBDBDBD);
-  static const Color primaryColor = Color(0xFF1355BF);
-  static const Color buttonColor = Color(0xFF155FD6);
+  static const Color primaryColor = Color(0xFFe62623);
+  static const Color buttonColor = Color(0xFFe62623);
   static const Color secondButtonColor = Color(0xFF7551FF);
   static const Color containerColor = Color(0xFF666A8B);
   static const Color secondContainerColor = Color(0xFF0C0E1B);

@@ -9,7 +9,7 @@ class WebLayOut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(1920, 1152),
+      designSize: const Size(1920, 757),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {

@@ -126,9 +126,10 @@ ThemeData lightTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       backgroundColor: LightColors.buttonColor,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(5.r),
         side: const BorderSide(color: LightColors.buttonColor),
       ),
       textStyle: TextStyle(
@@ -271,8 +272,15 @@ ThemeData darkTheme = ThemeData(
         height: getTextHeight(16, 19.36),
         color: DarkColors.textColor,
       ),
-      fixedSize: Size(double.maxFinite, 45.h),
+      fixedSize: getbuttonsice(),
       foregroundColor: Colors.white,
     ),
   ),
 );
+
+Size getbuttonsice() {
+  print('test utility');
+  print('hight : ${1.h}');
+  print('width : ${1.w}');
+  return Size(double.maxFinite, 45.h);
+}

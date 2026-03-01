@@ -13,7 +13,8 @@ class SelectLayoutSCreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        PrintHelper(constraints.maxWidth.toString());
+        PrintHelper('width: ${constraints.maxWidth}');
+        PrintHelper('hight : ${constraints.maxHeight}');
         if (constraints.maxWidth <= 500) {
           return mobileBuilder(context);
         } else if (constraints.maxWidth <= 1070) {
