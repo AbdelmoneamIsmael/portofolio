@@ -6,7 +6,9 @@ import 'package:portofolio/features/main/presentation/view/header_view.dart';
 import 'package:portofolio/features/main/presentation/view/projects.dart';
 
 class BodyView extends StatelessWidget {
-  const BodyView({super.key});
+  const BodyView({super.key, required this.scrollController});
+
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class BodyView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 120.h),
-        const HeaderSection(),
+        HeaderSection(scrollController: scrollController),
         const AboutSection(),
         const ProjectsView(),
         const ContactMeSection(),

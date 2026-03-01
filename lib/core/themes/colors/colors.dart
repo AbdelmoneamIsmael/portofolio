@@ -17,6 +17,12 @@ abstract class LightColors {
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
   static const Color greyColor = Color(0xFFBDBDBD);
+  
+  // Glassmorphism colors
+  static const Color glassBackgroundLight = Color(0x40FFFFFF);
+  static const Color glassBorderLight = Color(0x30FFFFFF);
+  static const Color glassShadowLight = Color(0x20000000);
+  static const Color glassOverlayLight = Color(0x10FFFFFF);
 }
 
 abstract class DarkColors {
@@ -35,4 +41,10 @@ abstract class DarkColors {
   static const Color greenColor = Color(0xFF21b6b7);
   static const Color darkGreyColor = Color(0xFF787981);
   static const Color greyColor = Color(0xFFBDBDBD);
+  
+  // Glassmorphism colors
+  static const Color glassBackgroundDark = Color(0x20000000);
+  static const Color glassBorderDark = Color(0x30FFFFFF);
+  static const Color glassShadowDark = Color(0x40000000);
+  static const Color glassOverlayDark = Color(0x10FFFFFF);
 }
