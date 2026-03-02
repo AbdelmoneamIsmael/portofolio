@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portofolio/core/const/app_const.dart';
 import 'package:portofolio/features/main/presentation/cubit/main_cubit.dart';
 import 'package:portofolio/features/main/presentation/cubit/main_state.dart';
 import 'package:portofolio/features/main/presentation/view/about_section.dart';
@@ -22,7 +23,7 @@ class BodyView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: kAppBarHeight),
             HeaderSection(key: cubit.homeKey),
             AboutSection(key: cubit.aboutKey),
             ProjectsView(key: cubit.projectsKey),

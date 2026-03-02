@@ -4,6 +4,7 @@ import 'package:portofolio/features/main/presentation/cubit/main_cubit.dart';
 import 'package:portofolio/features/main/presentation/cubit/main_state.dart';
 import 'package:portofolio/features/main/presentation/pages/body_view.dart';
 import 'package:portofolio/features/main/presentation/pages/portofolio_app_bar.dart';
+import 'package:portofolio/features/main/presentation/view/drawer_view.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -11,6 +12,8 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const DrawerView(),
+      key: context.read<MainCubit>().scaffoldKey,
       body: Stack(
         fit: StackFit.expand,
         children: [

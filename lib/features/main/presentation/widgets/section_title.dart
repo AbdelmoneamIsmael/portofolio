@@ -13,7 +13,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(icon, width: 48.w, height: 48.h),
+        SvgPicture.asset(icon, width: 32.w, height: 32.w),
         SizedBox(width: 20.w),
         Text(
           title.tr(),

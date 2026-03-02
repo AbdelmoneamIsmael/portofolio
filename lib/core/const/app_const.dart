@@ -1,3 +1,5 @@
+import 'package:portofolio/core/const/enums.dart';
+
 import '../model/app_model/app_model.dart' show ApplicationModel;
 import '../routes/pages_keys.dart';
 
@@ -8,6 +10,10 @@ String kInitialRoute = '/${PagesKeys.mainScreen}';
 const kFontFamily = 'Inter';
 const kAppName = 'Public Ecommerce';
 late ApplicationModel appModel;
+const kAnimationDuration = Duration(milliseconds: 500);
+const kAnimationDelay = Duration(milliseconds: 500);
+double kAppBarHeight = 120;
+DeviceType kDeviceType = DeviceType.web;
 
 // const internalLocalError = 700; // englishFont = "Poppins";
 

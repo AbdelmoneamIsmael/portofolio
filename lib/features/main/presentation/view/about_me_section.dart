@@ -31,13 +31,12 @@ class AboutMeSection extends StatelessWidget {
           ).withPadding(EdgeInsetsDirectional.only(start: 40.w)),
         ),
         SizedBox(height: 60.h),
-        AnimatedOnScroll(
-          delay: const Duration(milliseconds: 600),
-          offset: const Offset(0, 30),
-          child: const MyIcons(),
+        const AnimatedOnScroll(
+          delay: Duration(milliseconds: 600),
+          offset: Offset(0, 30),
+          child: MyIcons(),
         ),
       ],
     );
   }
 }
-

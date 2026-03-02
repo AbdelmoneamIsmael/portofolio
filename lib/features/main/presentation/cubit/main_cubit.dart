@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portofolio/core/const/app_const.dart';
 import 'package:portofolio/features/main/presentation/cubit/main_state.dart';
 
 class MainCubit extends Cubit<MainState> {
@@ -14,6 +15,7 @@ class MainCubit extends Cubit<MainState> {
   final GlobalKey aboutKey = GlobalKey();
   final GlobalKey projectsKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool _isScrolled = false;
   String _activeSection = 'home';
@@ -87,7 +89,7 @@ class MainCubit extends Cubit<MainState> {
       ).whenComplete(() {
         if (key != contactKey) {
           scrollController.animateTo(
-            Scrollable.of(key.currentContext!).position.pixels - 80.h,
+            Scrollable.of(key.currentContext!).position.pixels - kAppBarHeight,
             duration: const Duration(milliseconds: 800),
             curve: Curves.easeInOut,
           );

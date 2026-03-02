@@ -56,6 +56,7 @@ linter:
 
 analyzer:
   errors:
+    constant_pattern_never_matches_value_type: ignore
     invalid_annotation_target: ignore
   exclude:
     - "**/*.g.dart"

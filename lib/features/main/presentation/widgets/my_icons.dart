@@ -9,6 +9,7 @@ class MyIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      alignment: WrapAlignment.center,
       spacing: 20.w,
       runSpacing: 20.h,
       children: [
